@@ -102,7 +102,7 @@ public class SeleniumTest {
     List<WebElement> entriesList = tablePage.entries();
     FileWriter out = new FileWriter("names.txt");
         for (WebElement element: entriesList) {
-            out.write(element.findElement(By.cssSelector("#example>tbody>tr>td:nth-child(1)")).getText() + "\n");
+            out.write(element.getText() + "\n");
         }
         out.flush();
         out.close();
