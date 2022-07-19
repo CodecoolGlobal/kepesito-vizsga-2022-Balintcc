@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Jul 19 12:03:07 GMT 2022","Tue Jul 19 12:03:08 GMT 2022","259","","SeleniumTest","","SeleniumTest","TableTest","TableTest()",""
+"broken","Tue Jul 19 12:03:06 GMT 2022","Tue Jul 19 12:03:07 GMT 2022","1071","","SeleniumTest","","SeleniumTest","SelectDayTest","SelectDayTest()",""
+"broken","Tue Jul 19 12:03:08 GMT 2022","Tue Jul 19 12:03:08 GMT 2022","161","","SeleniumTest","","SeleniumTest","TestInput","TestInput()",""
