@@ -2,11 +2,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumTest {
@@ -90,8 +95,18 @@ public class SeleniumTest {
     Töltsd be az alábbi oldalt a böngészőbe: https://demo.seleniumeasy.com/table-data-download-demo.html
     Írj tesztesetet a mellékelt dokumentumban, majd a tesztlépések alapján írj automatizált tesztet. A tesztesetet ellenőrizze a táblázatból a neveket, amelyeket a táblázat első oszlop tartalmaz. Gyűjtsd össze a neveket és tárold le a names.txt fájlba majd a tesztesetben a fájl tartalmát hasonlítsd össze egy elvárt eredménnyel.
      */
-    public void TableTest()
-    {
+    @Test
+    public void TableTest() throws IOException {
+    TablePage tablePage = new TablePage(driver);
+    tablePage.navigate();
+    List<WebElement> entriesList = tablePage.entries();
+    FileWriter out = new FileWriter("names.txt");
+        for (WebElement element: entriesList) {
+            out.write(element.findElement(By.cssSelector("#example>tbody>tr>td:nth-child(1)")).getText() + "\n");
+        }
+        out.flush();
+        out.close();
+
 
     }
 
